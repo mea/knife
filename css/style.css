@@ -1,6 +1,9 @@
 body {
   overflow-x: hidden;
 }
+.hide {
+  display:none;
+}
 #new-page {
   width:962px;
   margin:0 auto;
@@ -10,7 +13,7 @@ body {
   height:1015px;
   position: absolute;
   left:50%;
-  top:3px;
+  top:0;
   margin-left:-485px;
   z-index: 0;
   background:rgba(0, 0, 0, 0.90);
@@ -22,29 +25,46 @@ body {
   float: right;
 }
 #feng {
-  width:151px;
-  height:0;
+  width:114px;
+  height:10px;
   position: absolute;
   left:50%;
-  top:0;
-  margin-left: -30px;
+  top:0px;
+  margin-left: -45px;
   background: url(../img/feng.png);
 }
 #knife {
   position: absolute;
   left:50%;
-  top:-450px;
+  top:-30px;
   cursor: pointer;
-  margin-left: 30px;
+  margin-left: -20px;
+}
+#pop1 {
+  position: absolute;
+  left:50%;
+  top:360px;
+  margin-left: -120px;
+}
+#pop2 {
+  position: absolute;
+  left:50%;
+  top:100px;
+  margin-left: -360px;
+}
+#arrow {
+  position: absolute;
+  left:50%;
+  top: 300px;
+  margin-left: -100px;
+  z-index: 4;
 }
 .animated {
   -webkit-animation-duration: 3s;
   -moz-animation-duration: 3s;
-  -o-animation-duration: 3s;
   animation-duration: 3s;
   -webkit-animation-fill-mode: both;
   -moz-animation-fill-mode: both;
-  -o-animation-fill-mode: both;
   animation-fill-mode: both;
 }
 @-webkit-keyframes flash {
@@ -57,11 +77,6 @@ body {
   25%, 75% {opacity: 0.2;}
 }
 
-@-o-keyframes flash {
-  0%, 50%, 100% {opacity: 1;}
-  25%, 75% {opacity: 0.2;}
-}
-
 @keyframes flash {
   0%, 50%, 100% {opacity: 1;}
   25%, 75% {opacity: 0.2;}
@@ -70,10 +85,34 @@ body {
 .flash {
   -webkit-animation-name: flash;
   -moz-animation-name: flash;
-  -o-animation-name: flash;
   animation-name: flash;
   -webkit-animation-iteration-count: infinite;
   -moz-animation-iteration-count: infinite;
-  -o-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+}
+@-webkit-keyframes fly {
+  0% {-webkit-transform: translateY(-20px);}
+  50% {-webkit-transform: translateY(0);}
+  100% {-webkit-transform: translateY(-20px);}
+}
+
+@-moz-keyframes fly {
+  0% {-moz-transform: translateY(-20px);}
+  50% {-moz-transform: translateY(0);}
+  100% {-moz-transform: translateY(-20px);}
+}
+
+@keyframes fly {
+  0% {transform: translateY(-20px);}
+  50% {transform: translateY(0);}
+  100% {transform: translateY(-20px);}
+}
+
+.fly {
+  -webkit-animation-name: fly;
+  -moz-animation-name: fly;
+  animation-name: fly;
+  -webkit-animation-iteration-count: infinite;
+  -moz-animation-iteration-count: infinite;
   animation-iteration-count: infinite;
 }
