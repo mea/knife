@@ -1,0 +1,79 @@
+body {
+  overflow-x: hidden;
+}
+#new-page {
+  width:962px;
+  margin:0 auto;
+}
+#cover {
+  width:970px;
+  height:1015px;
+  position: absolute;
+  left:50%;
+  top:3px;
+  margin-left:-485px;
+  z-index: 0;
+  background:rgba(0, 0, 0, 0.90);
+}
+#cover .l {
+  float:left;
+}
+#cover .r {
+  float: right;
+}
+#feng {
+  width:151px;
+  height:0;
+  position: absolute;
+  left:50%;
+  top:0;
+  margin-left: -30px;
+  background: url(../img/feng.png);
+}
+#knife {
+  position: absolute;
+  left:50%;
+  top:-450px;
+  cursor: pointer;
+  margin-left: 30px;
+}
+.animated {
+  -webkit-animation-duration: 3s;
+  -moz-animation-duration: 3s;
+  -o-animation-duration: 3s;
+  animation-duration: 3s;
+  -webkit-animation-fill-mode: both;
+  -moz-animation-fill-mode: both;
+  -o-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+@-webkit-keyframes flash {
+  0%, 50%, 100% {opacity: 1;}
+  25%, 75% {opacity: 0.2;}
+}
+
+@-moz-keyframes flash {
+  0%, 50%, 100% {opacity: 1;}
+  25%, 75% {opacity: 0.2;}
+}
+
+@-o-keyframes flash {
+  0%, 50%, 100% {opacity: 1;}
+  25%, 75% {opacity: 0.2;}
+}
+
+@keyframes flash {
+  0%, 50%, 100% {opacity: 1;}
+  25%, 75% {opacity: 0.2;}
+}
+
+.flash {
+  -webkit-animation-name: flash;
+  -moz-animation-name: flash;
+  -o-animation-name: flash;
+  animation-name: flash;
+  -webkit-animation-iteration-count: infinite;
+  -moz-animation-iteration-count: infinite;
+  -o-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+}
