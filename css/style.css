@@ -9,56 +9,97 @@ body {
   margin:0 auto;
 }
 #cover {
-  width:970px;
-  height:1015px;
-  position: absolute;
+  width:1000px;
+  height:840px;
+  position: fixed;
+  _position: absolute;
   left:50%;
   top:0;
-  margin-left:-485px;
+  margin-left:-500px;
   z-index: 0;
-  background:rgba(0, 0, 0, 0.90);
+  background:#FFF;
+}
+#cover div {
+  height:840px;
+  background-repeat: no-repeat;
 }
 #cover .l {
-  float:left;
+  width:486px;
+  position:absolute;
+  left:20px;
+  top:0;
+  background-image:url(../img/left.png);
 }
 #cover .r {
-  float: right;
+  width:482px;
+  position: absolute;
+  right:20px;
+  top:0;
+  background-image: url(../img/right.png);
+}
+#cover.after {
+  width:960px;
+  background-color: rgba(0, 0, 0, 0.9);
+}
+#cover.after .l {
+  left:0;
+}
+#cover.after .r {
+  right:0;
 }
 #feng {
-  width:114px;
+  width:107px;
   height:10px;
-  position: absolute;
+  position: fixed;
+  _position: absolute;
   left:50%;
   top:0px;
   margin-left: -45px;
   background: url(../img/feng.png);
+  font:10px/10px Arial;
 }
 #knife {
-  position: absolute;
+  position: fixed;
+  _position: absolute;
   left:50%;
   top:-30px;
   cursor: pointer;
   margin-left: -20px;
 }
 #pop1 {
-  position: absolute;
+  position: fixed;
+  _position:absolute;
   left:50%;
   top:360px;
   margin-left: -120px;
 }
 #pop2 {
-  position: absolute;
+  position: fixed;
+  _position:absolute;
   left:50%;
   top:100px;
   margin-left: -360px;
 }
 #arrow {
-  position: absolute;
+  position: fixed;
+  _position:absolute;
   left:50%;
   top: 300px;
   margin-left: -100px;
   z-index: 4;
 }
+#share-modal {
+  width:680px;
+  top:50%;
+  margin: -330px 0 0 -340px;
+}
+#share-modal .modal-body {
+  max-height: 1000px;
+}
+#share-modal img {
+  max-width: auto;
+}
+
 .animated {
   -webkit-animation-duration: 3s;
   -moz-animation-duration: 3s;
@@ -115,4 +156,27 @@ body {
   -webkit-animation-iteration-count: infinite;
   -moz-animation-iteration-count: infinite;
   animation-iteration-count: infinite;
+}
+
+@media (max-height: 700px) {
+  #cover, #cover div {
+    height: 700px;
+  }
+  #cover .l {
+    background-image: url(../img/left-700.png);
+  }
+  #cover .r {
+    background-image: url(../img/right-700.png);
+  }
+}
+@media (min-height: 841px) {
+  #cover, #cover div {
+    height:1440px;
+  }
+  #cover .l {
+    background-image: url(../img/left-1440.png);
+  }
+  #cover .r {
+    background-image: url(../img/right-1440.png);
+  }
 }
