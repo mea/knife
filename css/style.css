@@ -9,51 +9,69 @@ body {
   margin:0 auto;
 }
 #cover {
-  width:970px;
-  height:1015px;
-  position: absolute;
+  width:960px;
+  position: fixed;
+  _position: absolute;
   left:50%;
   top:0;
   margin-left:-485px;
   z-index: 0;
   background:rgba(0, 0, 0, 0.90);
 }
+#cover div {
+  height:1015px;
+  background-repeat: no-repeat;
+}
 #cover .l {
-  float:left;
+  width:486px;
+  position:absolute;
+  left:0;
+  top:0;
+  background-image:url(../img/left.png);
 }
 #cover .r {
-  float: right;
+  width:482px;
+  position: absolute;
+  right:0;
+  top:0;
+  background-image: url(../img/right.png);
 }
 #feng {
-  width:114px;
+  width:107px;
   height:10px;
-  position: absolute;
+  position: fixed;
+  _position: absolute;
   left:50%;
   top:0px;
   margin-left: -45px;
   background: url(../img/feng.png);
+  font:10px/10px Arial;
 }
 #knife {
-  position: absolute;
+  position: fixed;
+  _position: absolute;
   left:50%;
   top:-30px;
   cursor: pointer;
   margin-left: -20px;
 }
 #pop1 {
-  position: absolute;
+  position: fixed;
+  _position:absolute;
   left:50%;
   top:360px;
   margin-left: -120px;
 }
 #pop2 {
-  position: absolute;
+  position: fixed;
+  _position:absolute;
   left:50%;
   top:100px;
   margin-left: -360px;
 }
 #arrow {
-  position: absolute;
+  position: fixed;
+  _position:absolute;
   left:50%;
   top: 300px;
   margin-left: -100px;

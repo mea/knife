@@ -1,5 +1,7 @@
 $(function () {
   'use strict';
+  var scrollHeight = 0,
+      sliceHeight = 0;
   $('#knife')
     .on({
       'mouseover': function () {
@@ -12,16 +14,17 @@ $(function () {
     .draggable({
       axis: 'y',
       scroll: false,
-      drag: function (event, ui) {
-        var h = ui.position.top + 42 > $('#feng').height() ? ui.position.top + 42 : $('#feng').height();
-        $('#feng').height(h);
-        if (h > $(window).height() - 250) {
-          autoSlice();
-        }
-        $('#pop1').remove();
-        $('#arrow, #pop2').removeClass('hide');
-      }
+      drag: onScroll
     });
+  setTimeout(function () {
+    scrollHeight = document.body.offsetHeight - $(window).height();
+    sliceHeight = $(window).height() - 240;
+    if (scrollHeight > 0) {
+      $(window).scroll(onScroll);
+    }
+  }, 20);
+
+
   function autoSlice() {
     $('#arrow, #pop2').remove();
     $('#knife').animate({top: $(window).height()}, 400);
@@ -35,14 +38,30 @@ $(function () {
       .animate({top: $(window).height() + 50}, 1000);
     $('#cover')
       .animate({
-        width: $(window).width() + 970,
-        marginLeft: -($(window).width() + 970 >> 1)
+        width: $(window).width() + 960,
+        marginLeft: -($(window).width() + 960 >> 1)
       }, 2000)
       .animate({opacity: 0}, {duration: 500, complete: clear});
+    $(window).off('scroll').scrollTop(0);
   }
   function clear() {
     $('#knife, #feng, #cover').remove();
     $('#share-modal').modal('show');
+  }
+  function onScroll(event, ui) {
+    var h = 0;
+    if (ui) {
+      h = ui.position.top + 42 > $('#feng').height() ? ui.position.top + 42 : $('#feng').height();
+    } else {
+      h = sliceHeight * $(window).scrollTop() / scrollHeight;
+      $('#knife').css('top', h - 30);
+    }
+    $('#feng').height(h);
+    if (h > $(window).height() - 250) {
+      autoSlice();
+    }
+    $('#pop1').remove();
+    $('#arrow, #pop2').removeClass('hide');
   }
 });
 function postToWb() {
@@ -65,7 +84,4 @@ function postToWb() {
 
   var _u = 'http://share.v.t.qq.com/index.php?c=share&a=index&url='+_url+'&appkey='+_appkey+'&pic='+_pic+'&assname='+_assname+'&title='+_t;
   window.open( _u,'', 'width=700, height=680, top=0, left=0, toolbar=no, menubar=no, scrollbars=no, location=yes, resizable=no, status=no' );
-}
-function postToWeibo() {
-
 }
