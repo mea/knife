@@ -1,8 +1,19 @@
 $(function () {
   'use strict';
+  if (document.cookie.indexOf('0328new') !== -1) {
+    $('#cover').remove();
+    return;
+  }
+  // 写cookie
+  var now = new Date();
+  now.setDate(now.getDate() + 365);
+  document.cookie = '0328new=1;expires=' + now.toUTCString();
   var scrollHeight = 0,
       sliceHeight = 0,
       hasAnimation = supportsTransitions();
+
+  // 把东西显示出来
+  $('#cover div, #knife, #pop1, #feng').removeClass('hide');
   $('#knife')
     .on({
       'mouseover': function () {
@@ -30,6 +41,9 @@ $(function () {
   }, 500);
 
   // 给不能css动画的东西加上动画
+  if (!hasAnimation) {
+
+  }
 
  function autoSlice() {
     $('#arrow, #pop2').remove();

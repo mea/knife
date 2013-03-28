@@ -39,6 +39,7 @@ body {
 }
 #cover.after {
   width:960px;
+  margin-left: -480px;
   background-color: rgba(0, 0, 0, 0.9);
 }
 #cover.after .l {
